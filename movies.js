@@ -24,17 +24,14 @@ fetch('https://api.tvmaze.com/shows')
           <li class="list-group-item">Language:${movie.language}</li>
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">Go to Website</a>
-          <a href="#" class="card-link">Go to detail</a>
+          <a href="${movie.officialsite}" class="card-link">Go to Website</a>
+          <a href="cardDetail.html?id=${movie.id}" class="card-link">Go to detail</a>
         </div>
         </div>`
     });
- 
-    
   })
   .catch(error => {
-  
     console.error('There was a problem with the fetch operation:', error);
   });
   
-  
+ 
