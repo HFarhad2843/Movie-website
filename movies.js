@@ -83,5 +83,51 @@ function handleSearch(event) {
 }
 searchForm.addEventListener('submit', handleSearch);
 
+let currentPage = 1;
+const moviesPerPage = 12;
+
+function renderMoviesPerPage(data) {
+    const startIndex = (currentPage - 1) * moviesPerPage;
+    const endIndex = startIndex + moviesPerPage;
+    const moviesToDisplay = data.slice(startIndex, endIndex);
+
+    renderMovies(moviesToDisplay);
+}
+
+function renderPaginationButtons(totalPages) {
+    const paginationDiv = document.getElementById('pagination');
+    paginationDiv.innerHTML = '';
+
+    for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+        button.addEventListener('click', () => {
+            currentPage = i;
+            fetchAndRenderMovies();
+        });
+
+        paginationDiv.appendChild(button);
+    }
+}
+
+function fetchAndRenderMovies() {
+    fetch('https://api.tvmaze.com/shows')
+        .then(response => response.json())
+        .then(data => {
+            const totalPages = Math.ceil(data.length / moviesPerPage);
+            renderPaginationButtons(totalPages);
+            renderMoviesPerPage(data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
+
+fetchAndRenderMovies();
+
+
+    
+
+
 
 
