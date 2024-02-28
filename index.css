@@ -1,0 +1,82 @@
+
+.navbar {
+  background-color: #343a40; 
+}
+
+.navbar-brand {
+  color: #363232; 
+  font-size: 24px; 
+}
+
+.navbar-nav .nav-link {
+  color: #524c4c; 
+  font-size: 18px; 
+}
+
+
+.container {
+  margin-top: 40px; 
+}
+
+
+.card {
+  border: none; 
+  border-radius: 15px; 
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 30px; 
+  background-color: #ffffff; 
+  transition: transform 0.3s ease; 
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  border-top-left-radius: 15px; 
+  border-top-right-radius: 15px; 
+}
+
+.card-body {
+  padding: 20px; 
+}
+
+.card-title {
+  font-size: 24px; 
+  font-weight: bold; 
+  margin-bottom: 10px; 
+  color: #343a40;
+}
+
+.card-text {
+  font-size: 16px; 
+  color: #6c757d; 
+}
+
+
+ .pagination-container {
+  position: fixed;
+  bottom: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; 
+  background-color: #d1cbcb; 
+  padding: 10px 20px; 
+  border-radius: 20px; 
+  box-shadow: 0 2px 5px rgba(199, 27, 27, 0.1); 
+}
+
+.pagination-container ul.pagination {
+  margin: 0; 
+}
+
+.pagination-container .page-link {
+  color: #343a40; 
+  font-weight: bold; 
+}
+
+.pagination-container .page-item.active .page-link {
+  background-color: #343a40; 
+  border-color: #343a40; 
+  color: #fff; 
+}
