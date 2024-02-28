@@ -22,11 +22,13 @@
         })
         .then(data => {
           byDetail.innerHTML +=
-            `<div class="card col-3">
-         <img src="${data.image.medium}" class="card-img-top" alt="..." >
+            `<div class="card col-3" style="max-width: 540px;">
+         <img src ="${data.image.medium}" class="card-img-top" alt="..." style="width: 500px; height:auto;">
+         <div class="col-md-4">
           <div class="card-body">
-          <h5 class="card-title">${data.name}</h5>     
-          <p class="card-text">Premiere: ${data.premiered}</p>
+          <h2 class="card-title">${data.name}</h2>     
+          <h4 class="card-text">Premiere: ${data.premiered}</h4>
+          <h4 class="card-text">${data.summary}</h4>
           </div>
            <ul class="list-group list-group-flush">
            <li class="list-group-item">IMDB Rating: ${data.rating.average}</li>
